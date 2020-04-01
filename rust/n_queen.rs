@@ -11,7 +11,7 @@ fn is_safe(mat: &mut Vec<Vec<char>>, r: i32, c: i32, n: i32) -> bool {
         if mat[i as usize][c as usize] == 'Q' {
             return false;
         }
-        i -= 1; 
+        i -= 1;
     }
 
     let mut i = r;
@@ -20,7 +20,7 @@ fn is_safe(mat: &mut Vec<Vec<char>>, r: i32, c: i32, n: i32) -> bool {
         if mat[i as usize][j as usize] == 'Q' {
             return false;
         }
-        
+
         i -= 1;
         j -= 1;
     }
@@ -41,14 +41,14 @@ fn is_safe(mat: &mut Vec<Vec<char>>, r: i32, c: i32, n: i32) -> bool {
 
 fn n_queen(mat: &mut Vec<Vec<char>>, r: i32, n: i32) {
     if r == n {
-        println!("{:?}",mat);
+        println!("{:?}", mat);
         return;
     }
 
     for i in 0..n {
-        if is_safe(mat,r,i, n) {
+        if is_safe(mat, r, i, n) {
             mat[r as usize][i as usize] = 'Q';
-            n_queen(mat, r+1, n);
+            n_queen(mat, r + 1, n);
             mat[r as usize][i as usize] = '-';
         }
     }

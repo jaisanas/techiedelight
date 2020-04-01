@@ -7,7 +7,7 @@ fn main() {
     knight_tour(&mut visited, 0, 0, 1);
 }
 
-fn is_valid(x: i32, y: i32) -> bool{
+fn is_valid(x: i32, y: i32) -> bool {
     if x < 0 || y < 0 || x >= N || y >= N {
         return false;
     }
@@ -15,9 +15,9 @@ fn is_valid(x: i32, y: i32) -> bool{
     return true;
 }
 
-fn knight_tour(visited: &mut Vec<Vec<i32>>, x: i32, y: i32, steps: i32) {    
+fn knight_tour(visited: &mut Vec<Vec<i32>>, x: i32, y: i32, steps: i32) {
     visited[x as usize][y as usize] = steps;
-    if steps >= N*N {
+    if steps >= N * N {
         print_visited(visited);
         visited[x as usize][y as usize] = 0;
         return;
