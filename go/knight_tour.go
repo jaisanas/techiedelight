@@ -18,7 +18,7 @@ func main() {
 		}
 	}
 	printVisited(mat)
-	knightTour(mat,0, 0, 1)
+	knightTour(mat, 0, 0, 1)
 }
 
 func isValid(x int, y int) bool {
@@ -40,8 +40,8 @@ func knightTour(visited [N][N]int, x int, y int, steps int) {
 	for i := 0; i < 8; i++ {
 		newX := x + ROW[i]
 		newY := y + COL[i]
-		if isValid(newX,newY) && visited[newX][newY] == 0 {
-			knightTour(visited, newX, newY, steps + 1)
+		if isValid(newX, newY) && visited[newX][newY] == 0 {
+			knightTour(visited, newX, newY, steps+1)
 		}
 	}
 	visited[x][y] = 0
